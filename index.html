@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <!--FONTS-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <!--CSS-->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>Create Account</h2>
+      </div>
+      <form class="form" id="form">
+        <div class="form-control">
+          <label>Username</label>
+          <input type="text" placeholder="andreidragomir22" id="username" />
+          <i class="fa fa-check-circle"></i>
+          <i class="fa fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <div class="form-control">
+          <label>Email</label>
+          <input type="email" placeholder="email@andrei-web.com" id="email" />
+          <i class="fa fa-check-circle"></i>
+          <i class="fa fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <div class="form-control">
+          <label>Password</label>
+          <input type="password" placeholder="********" id="password" />
+          <i class="fa fa-check-circle"></i>
+          <i class="fa fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <div class="form-control">
+          <label>Confirm Passowrd</label>
+          <input type="password" placeholder="********" id="password2" />
+          <i class="fa fa-check-circle"></i>
+          <i class="fa fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <button>Submit</button>
+      </form>
+    </div>
+    <!--JS-->
+    <script src="assets/script/validation.js"></script>
+    <!--FONT AWESOME-->
+    <script
+      src="https://kit.fontawesome.com/7f374e2c1f.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
