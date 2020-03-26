@@ -110,4 +110,37 @@ body {
   color: #e74c3c;
   visibility: visible;
 }
+
+.success_box {
+  background-color: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.header_success {
+  text-align: center;
+}
+
+.header_success i {
+  font-size: 70px;
+  color: #2ecc71;
+}
+
+.header_success h1 {
+  color: #2ecc71;
+}
+
+.header_success h2 {
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #2ecc71;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+}
 /*# sourceMappingURL=style.css.map */
