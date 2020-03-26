@@ -144,7 +144,18 @@ button:hover {
   transition: 0.3s ease-in;
 }
 
-.success_box {
+.success_box,
+.container {
   display: none;
+}
+
+.successLogin_box {
+  background-color: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  max-width: 100%;
+  overflow: hidden;
 }
 /*# sourceMappingURL=style.css.map */
