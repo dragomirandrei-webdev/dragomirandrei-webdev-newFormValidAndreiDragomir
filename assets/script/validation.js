@@ -7,6 +7,7 @@ const password2 = document.getElementById("password2");
 
 const signInBox = document.getElementById("signIn");
 const successBox = document.getElementById("success");
+const successLogInBox = document.getElementById("successLogInBox");
 
 const loginEmail = document.getElementById("emailLogin");
 const loginPwd = document.getElementById("passwordLogin");
@@ -115,6 +116,7 @@ function checkLogin() {
     setErrorFor(loginEmail, "No account with this email.");
   } else {
     setSuccessFor(loginEmail);
+    validLoginEmail = true;
   }
 
   if (loginPwdValue == "") {
@@ -123,6 +125,13 @@ function checkLogin() {
     setErrorFor(loginPwd, "Password does not match.");
   } else {
     setSuccessFor(loginPwd);
+    validLoginPwd = true;
+  }
+
+  if (validLoginEmail && validLoginPwd) {
+    login.style.display = "none";
+    successBox.style.display = "none";
+    successLogInBox.style.display = "block";
   }
 }
 
