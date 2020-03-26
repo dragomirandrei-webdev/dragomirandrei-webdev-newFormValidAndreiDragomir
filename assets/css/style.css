@@ -143,4 +143,8 @@ button:hover {
   -webkit-transition: 0.3s ease-in;
   transition: 0.3s ease-in;
 }
+
+.success_box {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */

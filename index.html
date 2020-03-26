@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <div class="container">
+    <div id="signIn" class="container">
       <div class="header">
         <h2>Create Account</h2>
       </div>
@@ -51,6 +51,35 @@
         </div>
 
         <button style="cursor: pointer;">Submit</button>
+      </form>
+    </div>
+
+    <div id="success" class="success_box">
+      <div class="header header_success">
+        <i class="fa fa-check-circle"></i>
+        <h1>Congratulations</h1>
+        <h2>
+          Your account has been created successfully
+        </h2>
+      </div>
+      <form class="form" id="login">
+        <div class="form-control">
+          <label>Email</label>
+          <input type="email" id="emailLogin" />
+          <i class="fa fa-check-circle"></i>
+          <i class="fa fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <div class="form-control">
+          <label>Password</label>
+          <input type="password" id="passwordLogin" />
+          <i class="fa fa-check-circle"></i>
+          <i class="fa fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <button style="cursor: pointer;">Login</button>
       </form>
     </div>
     <!--JS-->

@@ -1,8 +1,12 @@
 const form = document.getElementById("form");
+const login = document.getElementById("login");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 const password2 = document.getElementById("password2");
+
+const signInBox = document.getElementById("signIn");
+const successBox = document.getElementById("success");
 
 const loginEmail = document.getElementById("emailLogin");
 const loginPwd = document.getElementById("passwordLogin");
@@ -16,9 +20,14 @@ let validEmail = false;
 let validPwd = false;
 let validPwd2 = false;
 
+// let isSignInVisible = true;
+// let isLogInVisible = false;
+
 function sendToSuccesPage() {
   if (validUsername && validEmail && validPwd && validPwd2) {
-    return window.location.replace("../assets/pages/success.html");
+    // return window.location.replace("../assets/pages/success.html");
+    signInBox.style.display = "none";
+    successBox.style.display = "block";
   } else {
     return;
   }
@@ -28,11 +37,23 @@ form.addEventListener("submit", e => {
   e.preventDefault();
 
   checkInputs();
-  // checkLogin();
+
+  // if (isSignInVisible) {
+  //   checkInputs();
+  // } else if (isLogInVisible) {
+  //   checkLogin();
+  // } //else {
+  //return
+  //}
+});
+
+login.addEventListener("submit", e => {
+  e.preventDefault();
+
+  checkLogin();
 });
 
 function checkInputs() {
-  // get the values from the input
   const usernameValue = username.value.trim();
   const emailValue = email.value.trim();
   const passwordValue = password.value.trim();
@@ -45,7 +66,7 @@ function checkInputs() {
   } else {
     setSuccessFor(username);
     validUsername = true;
-    // localStorage.setItem("username", usernameValue);
+    localStorage.setItem("username", usernameValue);
   }
 
   if (emailValue === "") {
@@ -55,7 +76,7 @@ function checkInputs() {
   } else {
     setSuccessFor(email);
     validEmail = true;
-    // localStorage.setItem("email", emailValue);
+    localStorage.setItem("email", emailValue);
   }
 
   if (passwordValue === "") {
@@ -67,7 +88,7 @@ function checkInputs() {
   } else {
     setSuccessFor(password);
     validPwd = true;
-    // localStorage.setItem("password", passwordValue);
+    localStorage.setItem("password", passwordValue);
   }
 
   if (password2Value === "") {
@@ -84,15 +105,26 @@ function checkInputs() {
   }
 }
 
-// function checkLogin() {
-//   const loginEmailValue = loginEmail.value.trim();
+function checkLogin() {
+  const loginEmailValue = loginEmail.value.trim();
+  const loginPwdValue = loginPwd.value.trim();
 
-//   if (loginEmailValue != localStorage.email) {
-//     setErrorFor(loginEmail, "No account with this email.");
-//   } else {
-//     setSuccessFor(loginEmail);
-//   }
-// }
+  if (loginEmailValue === "") {
+    return;
+  } else if (loginEmailValue != localStorage.email) {
+    setErrorFor(loginEmail, "No account with this email.");
+  } else {
+    setSuccessFor(loginEmail);
+  }
+
+  if (loginPwdValue == "") {
+    return;
+  } else if (loginPwdValue != localStorage.password) {
+    setErrorFor(loginPwd, "Password does not match.");
+  } else {
+    setSuccessFor(loginPwd);
+  }
+}
 
 function setErrorFor(input, message) {
   const formControl = input.parentElement; // .form-control
